@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="sample">
+        <attr name="customSize" format="dimension"></attr>
+        <attr name="customContext" format="string"></attr>
+        <attr name="customColor" format="color"></attr>
+    </declare-styleable>
+
+</resources>

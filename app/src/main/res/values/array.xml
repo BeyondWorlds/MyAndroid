@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="knowledge_list">
+        <item>Dialog</item>
+        <item>跳到其他应用</item>
+        <item>ViewPager</item>
+        <item>Animation</item>
+        <item>ViewPager</item>
+        <item>ViewPager</item>
+        <item>ViewPager</item>
+        <item>ManagerFunction</item>
+        <item>ManagerFunction</item>
+    </array>
+</resources>

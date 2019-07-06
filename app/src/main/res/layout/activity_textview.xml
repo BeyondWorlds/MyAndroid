@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:drawableLeft="@mipmap/ic_launcher"
+        android:drawablePadding="1dp"
+        android:gravity="center"
+        android:maxHeight="50dp"
+        android:maxLines="5"
+        android:maxWidth="50dp"
+        android:text="textview"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_dark"
+        android:textSize="@dimen/main_size"
+        android:textStyle="italic"
+        android:typeface="normal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberPassword"
+        android:text="textview"
+        android:textColor="@android:color/background_dark"
+        android:textSize="@dimen/main_size" />
+    <!--singleLine弃用-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="@string/more_text"
+        android:textColor="@android:color/background_dark"
+        android:textSize="@dimen/main_size" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingExtra="10dp"
+        android:lines="3"
+        android:text="@string/more_text"
+        android:textColor="@android:color/background_dark"
+        android:textSize="@dimen/main_size" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:text="网站为：http:www.baidu.com"
+        android:textSize="@dimen/main_size" />
+
+    <TextView
+        android:id="@+id/tv_effect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="网站为：http:www.baidu.com"
+        android:textSize="@dimen/main_size" />
+
+</LinearLayout>
