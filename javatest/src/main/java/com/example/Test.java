@@ -1,7 +1,7 @@
 package com.example;
 
 
-
+import java.util.HashMap;
 
 /**
  * Created by {wq} on 2018/6/28.
@@ -10,7 +10,6 @@ package com.example;
 public class Test {
 
     public static void main(String[] args) {
-
     }
 
 
