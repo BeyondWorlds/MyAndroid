@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -22,6 +24,13 @@ android {
             res.srcDirs('src/main/res', 'src/main/res_animation', 'src/main/res_manager', 'src/main/resource_usage')
         }
     }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def releaseApkName = 'MyAndroid_V' + variant.versionName + '_' + buildTime() + "_" + variant.buildType.name + '.apk'
+            outputFileName = releaseApkName
+        }
+    }
 }
 
 dependencies {
@@ -38,4 +47,11 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+/** 创建当前时间字符创 比如 20161107表示2016年11月7号进行编译 */
+def buildTime() {
+    def df = new SimpleDateFormat("yyyyMMdd_HHmm")
+    df.setTimeZone(TimeZone.getTimeZone("GMT+08:00"))
+    df.format(new Date())
 }

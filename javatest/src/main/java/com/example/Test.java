@@ -12,28 +12,32 @@ import java.util.Map;
 public class Test {
 
     public static void main(String[] args) {
-
-        Map map = new HashMap<String, String>();
-        map.put("one", "A");
-        map.put("two", "B");
-        map.put("three", "C");
-        map.put("center", "D");
-
-        String name = "C";
-        Iterator<String> dataIter = map.keySet().iterator();
-        while (dataIter.hasNext()) {
-            String key = dataIter.next();
-            if (map.get(key).equals(name)) {
-                map.put(key, map.get("center"));
-                map.put("center", name);
-                break;
-            }
-        }
-        Iterator<String> dataIter1 = map.keySet().iterator();
-        while (dataIter1.hasNext()) {
-            String key = dataIter1.next();
-            System.out.println("key="+key+" value="+map.get(key));
-        }
+//        String[] test = {"flow", "flower", "flay"};
+        String[] test = {"a", "b", "c"};
+        String result = "a";
+        System.out.println(result.substring(0, 1));
+//        System.out.println( longestCommonPrefix(test));
     }
 
+    public static String longestCommonPrefix(String[] strs) {
+
+        if (strs.length == 0) {
+            return "";
+        }
+        if (strs.length == 1) {
+            return strs[0];
+        }
+        if (strs[0].equals("")) {
+            return "";
+        }
+        String result = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            if (strs[i].indexOf(result) != 0) {
+                result = result.substring(0, result.length() - 1);
+                if(result.isEmpty()) return "";
+            }
+
+        }
+        return "";
+    }
 }
