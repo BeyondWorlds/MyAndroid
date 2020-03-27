@@ -1,52 +1,62 @@
 package com.wq.app
 
+import android.Manifest
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ArrayAdapter
+import com.beyondworlds.appupdate.ApkDownLoadManager
+import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wq.allandroid.R
 import com.wq.animation.StartAnimationActivity
 import com.wq.manager.ui.ManagerFunctionActivity
 import com.wq.view.dialog.DialogActivity
 import com.wq.view.viewpager.vptransformer.ui.VPTransformerActivity
+import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_start.*
 
 
 class StartActivity : AppCompatActivity() {
     var mKnowledgeList: Array<String>? = null
-
+//    var mApkUrl ="https://isportcloud.oss-cn-shenzhen.aliyuncs.com/manager/shikongzhiyiH5_10664.apk"
+    var mApkUrl = "https://isportcloud.oss-cn-shenzhen.aliyuncs.com/manager/JKCQ_V[1.1.6]_2020-03-05-1510_release.apk"
     override
     fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
+        initPermission()
         initData()
         initListView()
-        Log.e("test","onCreate")
+        Log.e("test", "onCreate")
     }
 
     override fun onStart() {
         super.onStart()
-        Log.e("test","onstart")
+        Log.e("test", "onstart")
     }
+
     override fun onPause() {
         super.onPause()
-        Log.e("test","onPause")
+        Log.e("test", "onPause")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.e("test","onresume")
+        Log.e("test", "onresume")
     }
+
     override fun onStop() {
         super.onStop()
-        Log.e("test","onStop")
+        Log.e("test", "onStop")
     }
+
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("test","onDestroy")
+        Log.e("test", "onDestroy")
     }
+
     fun initData() {
         mKnowledgeList = resources.getStringArray(R.array.knowledge_list)
     }
@@ -74,8 +84,21 @@ class StartActivity : AppCompatActivity() {
                 5 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
                 6 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
                 7 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
-                8 -> startActivity(Intent(this@StartActivity, ManagerFunctionActivity::class.java))
+                8 -> ApkDownLoadManager(this).startDownLoad(mApkUrl)
             }
         }
+    }
+
+    fun initPermission() {
+        RxPermissions(this)
+                .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        , Manifest.permission.REQUEST_INSTALL_PACKAGES)
+                .subscribe { aBoolean ->
+                    if (aBoolean!!) {
+
+                    } else {
+
+                    }
+                }
     }
 }

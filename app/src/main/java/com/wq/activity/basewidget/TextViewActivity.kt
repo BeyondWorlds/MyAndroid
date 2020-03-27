@@ -1,4 +1,4 @@
-package com.wq.activity
+package com.wq.activity.basewidget
 
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity

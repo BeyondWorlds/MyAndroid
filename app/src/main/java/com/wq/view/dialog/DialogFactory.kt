@@ -6,6 +6,7 @@ import android.app.ProgressDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.DialogInterface
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.support.v7.app.AlertDialog
 import android.widget.Toast
@@ -62,6 +63,11 @@ class DialogFactory {
                         .setNegativeButton("no", negative)
             }
             builder.create().show()
+            //有些系统，按钮的颜色和背景色重合
+//            val btnPos = dialog.getButton(DialogInterface.BUTTON_POSITIVE)
+//            val btnNeg = dialog.getButton(DialogInterface.BUTTON_NEGATIVE)
+//            btnPos.setTextColor(Color.BLACK)
+//            btnNeg.setTextColor(Color.BLACK)
         }
 
         fun showStandardDialog(context: Context) {
