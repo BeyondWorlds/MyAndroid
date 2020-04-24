@@ -4,3 +4,9 @@
 <activity 
     android:name=".MainActivity"
     android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+    
+## 布局
+- 标题被状态栏挡住了
+```
+
+```  

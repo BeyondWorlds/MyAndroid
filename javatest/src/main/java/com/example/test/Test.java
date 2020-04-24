@@ -8,8 +8,10 @@ import java.util.Vector;
  */
 public class Test {
     public static void main(String[] args) {
-        Animal animal = new Dog();
-        animal.run();
-        Vector<String> vector=new Vector<String>();
+        int a=0xca;
+        int b=6;
+        int c=9;
+        int d=a^b^c;
+        System.out.println(d);
     }
 }

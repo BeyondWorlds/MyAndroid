@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.wq.activity.basewidget.EdittextActivity">
 
     <EditText
@@ -11,5 +12,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="这是个提示"
+        android:textCursorDrawable="@drawable/shape_et_cursor_color"
         android:inputType="number" />
-</RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="无下划线,软键盘Enter变为搜索"
+        android:imeOptions="actionSearch"
+        android:background="@null"
+        android:inputType="number" />
+</LinearLayout>
