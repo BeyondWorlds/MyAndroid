@@ -13,7 +13,7 @@ import com.wq.allandroid.R;
 
 public class RotateActivity extends Activity {
 	private Button mBtnStart;
-	private ImageView mImg;
+	private ImageView mImg,img_point;
 	private RotateAnimation mAnimation;
 
 	@Override
@@ -32,15 +32,20 @@ public class RotateActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				mImg.startAnimation(mAnimation);
+//				mImg.startAnimation(mAnimation);
+				img_point.startAnimation(mAnimation);
+
 			}
 		});
 		mImg = (ImageView) findViewById(R.id.img);
+		img_point=findViewById(R.id.img_point);
 	}
 
 	private void setAnimation() {
 		// 两个参数分别表示起始和结束时的角度
-		mAnimation = new RotateAnimation(0f, 360f);
+//		mAnimation = new RotateAnimation(0f, 270f);
+		mAnimation = new RotateAnimation(0f, 90f,20,200);
 		mAnimation.setDuration(3000);// 动画运行时间
+		mAnimation.setFillAfter(true);
 	}
 }

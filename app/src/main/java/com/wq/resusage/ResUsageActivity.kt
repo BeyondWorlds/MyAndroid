@@ -2,7 +2,7 @@ package com.wq.resusage
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import com.wq.allandroid.R
 import com.wq.base.BaseActivity
 

@@ -22,4 +22,12 @@
         android:scaleType="fitXY"
         android:src="@drawable/base" />
 
+    <ImageView
+        android:id="@+id/img_point"
+        android:layout_width="40px"
+        android:layout_height="200px"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_point" />
 </LinearLayout>

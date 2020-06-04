@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".coordinatorlayout.AppbarLayoutActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@color/black"
+        android:text="跟随滑动跟随滑动跟随滑动跟随滑动"
+        android:textSize="20sp"></TextView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more_text"
+                android:textColor="@color/black"
+                android:textSize="15sp"></TextView>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跟随滑动"
+                android:textSize="20sp"
+                app:layout_scrollFlags="scroll"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跟随滑动，下拉时，先显示"
+                android:textSize="20sp"
+                app:layout_scrollFlags="scroll|enterAlways"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="60dp"
+                android:text="跟随滑动，下拉时，先显示最小高度，到顶部后，再显示其他"
+                android:textSize="20sp"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="跟随滑动，到最小高度时固定，到顶部后，再显示其他"
+                android:textSize="20sp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="snap"
+                android:textSize="20sp"
+                app:layout_scrollFlags="snap"></TextView>
+
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

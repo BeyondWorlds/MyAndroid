@@ -6,14 +6,14 @@
     android:orientation="vertical"
     tools:context="com.wq.manager.nitification.NotificationActivity">
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_base_notification"
         style="@style/MainBtnStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="基本通知" />
 
-    <android.support.v7.widget.AppCompatButton
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_costom_notification"
         style="@style/MainBtnStyle"
         android:layout_width="wrap_content"

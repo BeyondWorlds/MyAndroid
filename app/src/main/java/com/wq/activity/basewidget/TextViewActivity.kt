@@ -1,7 +1,7 @@
 package com.wq.activity.basewidget
 
 import android.graphics.Color
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_textview.*
 import android.graphics.Paint

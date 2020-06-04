@@ -84,7 +84,7 @@ public class BasePropertyActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.btn_rotate:
 			// 旋转360度
-			ObjectAnimator AnimatorRotate = ObjectAnimator.ofFloat(mImg, "rotation", 0f, 360f);
+			ObjectAnimator AnimatorRotate = ObjectAnimator.ofFloat(mImg, "rotation", 0f, 270f);
 			AnimatorRotate.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
 				@Override

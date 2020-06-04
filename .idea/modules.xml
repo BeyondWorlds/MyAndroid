@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MyAndroid/app" />
       <module fileurl="file://$PROJECT_DIR$/appupdate/appupdate.iml" filepath="$PROJECT_DIR$/appupdate/appupdate.iml" group="MyAndroid/appupdate" />
       <module fileurl="file://$PROJECT_DIR$/baseview/baseview.iml" filepath="$PROJECT_DIR$/baseview/baseview.iml" group="MyAndroid/baseview" />
+      <module fileurl="file://$PROJECT_DIR$/filelibrary/filelibrary.iml" filepath="$PROJECT_DIR$/filelibrary/filelibrary.iml" group="MyAndroid/filelibrary" />
       <module fileurl="file://$PROJECT_DIR$/javatest/javatest.iml" filepath="$PROJECT_DIR$/javatest/javatest.iml" group="MyAndroid/javatest" />
       <module fileurl="file://$PROJECT_DIR$/multiple-status-view/multiple-status-view.iml" filepath="$PROJECT_DIR$/multiple-status-view/multiple-status-view.iml" group="MyAndroid/multiple-status-view" />
       <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" group="MyAndroid/util" />

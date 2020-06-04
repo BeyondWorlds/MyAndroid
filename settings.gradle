@@ -1,2 +1,3 @@
 include ':app', ':javatest', ':util', ':multiple-status-view', ':viewlibrary', ':appupdate'
 include ':baseview'
+include ':filelibrary'
