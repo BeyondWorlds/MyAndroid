@@ -2,32 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wq.allandroid">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_test1"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.wq.activity.basewidget.EdittextActivity"></activity>
+        <activity android:name="com.wq.TestActivity"></activity>
+        <activity android:name="com.wq.activity.basewidget.EdittextActivity" />
         <activity android:name="com.wq.activity.basewidget.TextViewActivity" /> <!-- exported: 允许其他应用调用；process：指定运行进程 -->
-        <service
-            android:name="com.wq.service.MyService"
-            android:enabled="true"
-            android:exported="true"
-            android:process=":remote" />
-
-        <meta-data
-            android:name="test"
-            android:value="beyond" /> <!-- activity -->
         <activity android:name="com.wq.app.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,10 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name="com.wq.app.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- activity -->
         <activity android:name="com.wq.activity.TestListActivity" />
         <activity android:name="com.wq.activity.CustomActivity" />
         <activity android:name="com.wq.manager.nitification.NotificationActivity" />
@@ -46,15 +30,31 @@
         <activity android:name="com.wq.resusage.ResUsageActivity" />
         <activity android:name="com.wq.view.dialog.DialogActivity" />
         <activity android:name="com.wq.view.viewpager.vptransformer.ui.VPTransformerActivity" />
-        <activity android:name="com.wq.manager.ui.ManagerFunctionActivity" /> <!-- animation -->
+        <activity android:name="com.wq.manager.ui.ManagerFunctionActivity" />
         <activity android:name="com.wq.animation.StartAnimationActivity" />
-        <activity android:name="com.wq.animation.tween.TranslateActivity" />
+        <activity android:name="com.wq.animation.tween.TranslateActivity" /> <!-- animation -->
         <activity android:name="com.wq.animation.tween.ScaleActivity" />
         <activity android:name="com.wq.animation.tween.AlphaActivity" />
         <activity android:name="com.wq.animation.tween.RotateActivity" />
         <activity android:name="com.wq.animation.tween.AnimationSetActivity" />
         <activity android:name="com.wq.animation.tween.AnimationUtilActivity" />
         <activity android:name="com.wq.animation.property.BasePropertyActivity" />
+        <meta-data
+            android:name="test"
+            android:value="beyond" />
+        <service
+            android:name="com.wq.service.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

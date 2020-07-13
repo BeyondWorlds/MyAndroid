@@ -2,6 +2,7 @@ package com.example
 
 import com.example.common.Convert
 import jdk.nashorn.internal.objects.Global
+import kotlinx.coroutines.*
 import javax.xml.bind.JAXBElement
 
 /**
@@ -9,11 +10,28 @@ import javax.xml.bind.JAXBElement
  */
 object Test {
     @JvmStatic
-    fun main(args: Array<String>) {
-        var a=-85;
-        var b=0x00ff;
-        var c=a and b;
-        System.out.println(c)
-        System.out.println(Integer.toHexString(c))
+    fun main(args: Array<String>) = runBlocking<Unit> {
+        CoroutineScope(Dispatchers.IO).launch {
+            System.out.println("Hello world")
+            var msg = ""
+            showGetWorld(getWorld())
+            System.out.println("Hello bey")
+        }
+        delay(3000)
+    }
+
+    suspend fun getWorld(): String {
+        var msg = "hehe"
+        val job = GlobalScope.launch {
+            delay(1000)
+            msg = "getWorld"
+        }
+       job.join()
+        return msg
+    }
+
+    suspend fun showGetWorld(msg: String) {
+        System.out.println("showGetWorld")
+        System.out.println(msg)
     }
 }

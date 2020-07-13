@@ -4,7 +4,7 @@ package com.example.sort;
  * Created by {wq} on 2018/4/17.
  */
 
-public class Sort<T> {
+public class Sort {
     /**
      * 冒泡排序
      *
@@ -91,6 +91,8 @@ public class Sort<T> {
     }
 
     /**
+     * 希尔排序
+     *
      * @param data
      */
     public static void sortByShell(int data[]) {
@@ -122,15 +124,31 @@ public class Sort<T> {
 
     }
 
+    /**
+     * 选择排序
+     *
+     * @param data
+     */
     public static void sortBySelect(int[] data) {
 
+        for (int i = 0; i < data.length; i++) {
+            int index = i;
+            for (int j = i+1; j < data.length; j++) {
+                if (data[j] < data[index]) {
+                    index = j;
+                }
+            }
+            if (index != i) {
+                swap(data, i, index);
+            }
+        }
 
     }
 
     /**
-     * 交换数组位置
+     * 交换数组位置,注意a!=b,否则数据为0
      */
-    private static void swap(int data[], int a, int b) {
+    public static void swap(int data[], int a, int b) {
         data[a] = data[a] + data[b];
         data[b] = data[a] - data[b];
         data[a] = data[a] - data[b];

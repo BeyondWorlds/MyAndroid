@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.widget.ArrayAdapter
 import com.beyondworlds.appupdate.ApkDownLoadManager
+import com.example.utillibrary.activity.PermissonActivity
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wq.allandroid.R
 import com.wq.animation.StartAnimationActivity
@@ -83,22 +84,23 @@ class StartActivity : AppCompatActivity() {
                 4 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
                 5 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
                 6 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
-                7 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
+                7 -> startActivity(Intent(this@StartActivity, PermissonActivity::class.java))
                 8 -> ApkDownLoadManager(this).startDownLoad(mApkUrl)
             }
         }
     }
 
     fun initPermission() {
-        RxPermissions(this)
-                .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
-                        , Manifest.permission.REQUEST_INSTALL_PACKAGES)
-                .subscribe { aBoolean ->
-                    if (aBoolean!!) {
 
-                    } else {
-
-                    }
-                }
+//        RxPermissions(this)
+//                .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
+//                        , Manifest.permission.REQUEST_INSTALL_PACKAGES)
+//                .subscribe { aBoolean ->
+//                    if (aBoolean!!) {
+//
+//                    } else {
+//
+//                    }
+//                }
     }
 }

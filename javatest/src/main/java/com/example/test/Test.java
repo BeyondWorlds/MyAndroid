@@ -1,6 +1,6 @@
 package com.example.test;
 
-import java.util.Vector;
+import com.example.sort.Sort;
 
 /**
  * @author wq
@@ -8,10 +8,10 @@ import java.util.Vector;
  */
 public class Test {
     public static void main(String[] args) {
-        int a=0xca;
-        int b=6;
-        int c=9;
-        int d=a^b^c;
-        System.out.println(d);
+        int[] a = {20, 16, 33, 24, 8, 66, 19, 28, 21, 7, 17};
+        Sort.sortBySelect(a);
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
     }
 }

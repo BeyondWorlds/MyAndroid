@@ -1,31 +1,15 @@
 package com.wq.activity.basewidget
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_textview.*
 import android.graphics.Paint
 import android.graphics.Typeface
+import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
-import android.text.style.AbsoluteSizeSpan
-import android.text.style.BackgroundColorSpan
-import android.text.style.StyleSpan
-import kotlinx.android.synthetic.main.content_main.*
-import android.R
-import android.text.style.ForegroundColorSpan
-import android.widget.TextView
-import android.text.style.URLSpan
-import android.text.style.ScaleXSpan
-import android.text.style.StrikethroughSpan
-import android.R.string
-
-
-
-
-
-
-
+import android.text.Spanned
+import android.text.style.*
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_textview.*
 
 class TextViewActivity : AppCompatActivity() {
 
@@ -65,6 +49,20 @@ class TextViewActivity : AppCompatActivity() {
         string.setSpan(ScaleXSpan(0.5f), 7, 8, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
         //删除线
         string.setSpan(StrikethroughSpan(), 2, 4, Spannable.SPAN_INCLUSIVE_INCLUSIVE)
-        textView.text = string
+        tv_effect.text = string
+
+        //上标
+        val spannableString = SpannableString("如果我是陈奕迅")
+        val relativeSizeSpan = RelativeSizeSpan(0.8f)
+        val superscriptSpan = SuperscriptSpan()
+        spannableString.setSpan(relativeSizeSpan, 4, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(superscriptSpan, 4, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE)
+        tv_effect.setText(spannableString)
+
+        //下标
+        val subscriptSpan = SubscriptSpan()
+        spannableString.setSpan(relativeSizeSpan, 4, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(subscriptSpan, 4, 7, Spanned.SPAN_INCLUSIVE_EXCLUSIVE)
+        tv_effect.setText(spannableString)
     }
 }
