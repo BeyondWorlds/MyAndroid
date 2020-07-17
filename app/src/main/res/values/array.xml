@@ -6,9 +6,10 @@
         <item>ViewPager</item>
         <item>Animation</item>
         <item>ViewPager</item>
-        <item>ViewPager</item>
-        <item>ViewPager</item>
-        <item>ManagerFunction</item>
+        <item>ManagerFunctionActivity</item>
+        <item>资源使用</item>
+        <item>权限使用</item>
         <item>AppUpdate</item>
+        <item>沉浸式</item>
     </array>
 </resources>

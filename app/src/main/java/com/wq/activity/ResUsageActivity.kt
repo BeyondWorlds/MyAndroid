@@ -1,4 +1,4 @@
-package com.wq.resusage
+package com.wq.activity
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -15,10 +15,12 @@ class ResUsageActivity : BaseActivity() {
     }
 
     fun initView() {
+        //获取字符串数组
+        var stringList = resources.getStringArray(R.array.knowledge_list)
         //获取资源中的string
         var text = resources.getString(R.string.think)
         //获取资源中的drawable
-        var drawable = ContextCompat.getDrawable(this, R.drawable.selector_bg_color)
+        var drawable = resources.getDrawable(R.drawable.selector_bg_color)
         //获取资源中的bitmap
         var bitmap = BitmapFactory.decodeResource(resources, R.drawable.selector_bg_color)
         //获取asset中的资源

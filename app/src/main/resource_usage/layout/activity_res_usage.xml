@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.wq.resusage.ResUsageActivity">
+    tools:context="com.wq.activity.ResUsageActivity">
 
     <Button
         android:id="@+id/btn_effect1"

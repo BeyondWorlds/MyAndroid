@@ -10,12 +10,13 @@ import android.widget.ArrayAdapter
 import com.beyondworlds.appupdate.ApkDownLoadManager
 import com.example.utillibrary.activity.PermissonActivity
 import com.tbruyelle.rxpermissions2.RxPermissions
+import com.wq.activity.BarActivity
 import com.wq.allandroid.R
 import com.wq.animation.StartAnimationActivity
+import com.wq.activity.ResUsageActivity
 import com.wq.manager.ui.ManagerFunctionActivity
 import com.wq.view.dialog.DialogActivity
 import com.wq.view.viewpager.vptransformer.ui.VPTransformerActivity
-import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_start.*
 
 
@@ -82,25 +83,26 @@ class StartActivity : AppCompatActivity() {
                 2 -> startActivity(Intent(this@StartActivity, VPTransformerActivity::class.java))
                 3 -> startActivity(Intent(this@StartActivity, StartAnimationActivity::class.java))
                 4 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
-                5 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
-                6 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
+                5 -> startActivity(Intent(this@StartActivity, ManagerFunctionActivity::class.java))
+                6 -> startActivity(Intent(this@StartActivity, ResUsageActivity::class.java))
                 7 -> startActivity(Intent(this@StartActivity, PermissonActivity::class.java))
                 8 -> ApkDownLoadManager(this).startDownLoad(mApkUrl)
+                9 -> startActivity(Intent(this@StartActivity, BarActivity::class.java))
             }
         }
     }
 
     fun initPermission() {
 
-//        RxPermissions(this)
-//                .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
-//                        , Manifest.permission.REQUEST_INSTALL_PACKAGES)
-//                .subscribe { aBoolean ->
-//                    if (aBoolean!!) {
-//
-//                    } else {
-//
-//                    }
-//                }
+        RxPermissions(this)
+                .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
+                        , Manifest.permission.REQUEST_INSTALL_PACKAGES)
+                .subscribe { aBoolean ->
+                    if (aBoolean!!) {
+
+                    } else {
+
+                    }
+                }
     }
 }

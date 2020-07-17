@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:orientation="vertical"
+    tools:context="com.wq.activity.BarActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="迷之尴尬"
+            android:textColor="@color/black"
+            android:textSize="24sp"></TextView>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_no_actionbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOActionBar"
+        android:textAllCaps="false"></Button>
+
+    <Button
+        android:id="@+id/btn_hide_navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="隐藏导航栏"
+        android:textAllCaps="false"></Button>
+
+    <Button
+        android:id="@+id/btn_translucent_statusbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="半透明状态栏"
+        android:textAllCaps="false"></Button>
+
+    <Button
+        android:id="@+id/btn_statusbar_black_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="改变状态栏字体和图标颜色"></Button>
+    <Button
+        android:id="@+id/btn_change_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="改变背景"></Button>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_alpha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="透明背景"></Button>
+
+        <Button
+            android:id="@+id/btn_full_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全屏"></Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="由于顶层contentView默认白色背景，
+            所以设置透明背景效果等同于设置白色背景,除非设置全屏，那么底部视图背景就是当前背景了"></TextView>
+    </LinearLayout>
+</LinearLayout>

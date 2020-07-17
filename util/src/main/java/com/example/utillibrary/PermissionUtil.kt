@@ -21,7 +21,7 @@ object PermissionUtil {
     /**
      * 检查权限
      */
-    fun checkPermission(activity: Activity, permissons: Array<String>, code: Int = REQUEST_DEFAULT, permissonCallback: OnPermissonCallback) {
+    fun checkPermission(activity: Activity, permissons: Array<String>, permissonCallback: OnPermissonCallback, code: Int = REQUEST_DEFAULT) {
         mPermissonCallback = permissonCallback
         val denyPermisson = findDeniedPermissions(activity, permissons)
         if (denyPermisson.size > 0) {
