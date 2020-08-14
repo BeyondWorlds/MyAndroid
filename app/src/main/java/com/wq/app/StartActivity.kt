@@ -64,7 +64,7 @@ class StartActivity : AppCompatActivity() {
     }
 
     fun initListView() {
-        lv_start_list.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKnowledgeList)
+        lv_start_list.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKnowledgeList!!)
         lv_start_list.setOnItemClickListener { _, _, position, _ ->
             when (position) {
                 0 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))

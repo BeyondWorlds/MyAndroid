@@ -1,0 +1,37 @@
+<resources>
+    <string name="module_name">base</string>
+    <string name="no_required_permission">Permission denied.</string>
+    <string name="scanner_action_cancel">Cancel</string>
+    <string name="scanner_action_scan">Scan</string>
+    <string name="scanner_permission_rationale">Since Android 6.0 Marshmallow system requires granting access to device\'s location in order to scan for Bluetooth LE devices. Bluetooth beacons may be used to determine the phone\'s and user\'s location.</string>
+    <string name="scanner_title">Select device:</string>
+    <string name="scanner_empty">No device found</string>
+    <string name="scanner_subtitle_bonded">BONDED DEVICES:</string>
+    <string name="scanner_subtitle_not_bonded">AVAILABLE DEVICES:</string>
+    <string name="not_available">n/a</string>
+    <string name="not_available_value">" - "</string>
+
+    <string name="gender_male">男</string>//男
+    <string name="gender_female">女</string>//女
+
+
+    <string name="friend">好友</string>
+    <string name="attention">关注</string>
+    <string name="fans_club">粉丝</string>
+    <string name="feed">动态</string>
+
+    <string name="ride_week_sum_title">本周累计</string>
+    <string name="sport_time_title">耗时</string>
+    <string name="sport_time_unitl">min</string>
+    <string name="sport_cal_title">消耗</string>
+    <string name="sport_cal_unitl">cal</string>
+    <string name="sport_hw_title">发电量</string>
+    <string name="sport_hw_unitl">kj</string>
+    <string name="started_riding">开始骑行</string>
+    <string name="sport_dis_title">里程数</string>
+    <string name="sport_dis_unitl">km</string>
+    <string name="sport_count_title">次数</string>
+    <string name="sport_bike_line_title">线路骑行</string>
+    <string name="sport_bike_pk_title">PK骑行</string>
+    <string name="grand_total">Grand total</string>
+</resources>

@@ -3,7 +3,7 @@ package com.example.utillibrary;
 import android.util.Log;
 
 public class LogUtil {
-    private static final String TAG = "test_log";
+    private static final String TAG = "jkcq_dgdc";
     private static final boolean IS_DEBUG = true;
 
     public static void e(String msg) {

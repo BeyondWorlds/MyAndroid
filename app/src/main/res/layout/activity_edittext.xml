@@ -22,4 +22,12 @@
         android:imeOptions="actionSearch"
         android:background="@null"
         android:inputType="number" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="限制"
+        android:background="@null"
+        android:inputType="number"
+        android:maxLength="11"/>
 </LinearLayout>

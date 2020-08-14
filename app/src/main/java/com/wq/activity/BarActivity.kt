@@ -63,9 +63,10 @@ class BarActivity : AppCompatActivity() {
         }
         //全屏，状态栏悬浮在内容上
         btn_full_screen.setOnClickListener {
-            //
-            //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
+           window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+            //此种全屏状态栏不被内容覆盖，为白屏
+//            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
 
         }
