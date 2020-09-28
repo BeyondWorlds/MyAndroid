@@ -8,14 +8,15 @@
         android:label="baseview"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".coordinatorlayout.AppbarLayoutActivity"></activity>
-        <activity android:name=".coordinatorlayout.CoordinatorMainActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".tablayout.TabLayoutActivity"></activity>
+        <activity android:name=".coordinatorlayout.AppbarLayoutActivity" />
+        <activity android:name=".coordinatorlayout.CoordinatorMainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

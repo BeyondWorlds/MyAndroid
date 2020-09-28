@@ -3,6 +3,18 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MyAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/MyAndroid.iml" group="MyAndroid" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyAndroid-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyAndroid-app.iml" group="MyAndroid/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/appupdate/MyAndroid-appupdate.iml" filepath="$PROJECT_DIR$/.idea/modules/appupdate/MyAndroid-appupdate.iml" group="MyAndroid/appupdate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselib/MyAndroid-baselib.iml" filepath="$PROJECT_DIR$/.idea/modules/baselib/MyAndroid-baselib.iml" group="MyAndroid/baselib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baseview/MyAndroid-baseview.iml" filepath="$PROJECT_DIR$/.idea/modules/baseview/MyAndroid-baseview.iml" group="MyAndroid/baseview" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/filelibrary/MyAndroid-filelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/filelibrary/MyAndroid-filelibrary.iml" group="MyAndroid/filelibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/javatest/MyAndroid-javatest.iml" filepath="$PROJECT_DIR$/.idea/modules/javatest/MyAndroid-javatest.iml" group="MyAndroid/javatest" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jetpack/MyAndroid-jetpack.iml" filepath="$PROJECT_DIR$/.idea/modules/jetpack/MyAndroid-jetpack.iml" group="MyAndroid/jetpack" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ktx/MyAndroid-ktx.iml" filepath="$PROJECT_DIR$/.idea/modules/ktx/MyAndroid-ktx.iml" group="MyAndroid/ktx" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiple-status-view/MyAndroid-multiple-status-view.iml" filepath="$PROJECT_DIR$/.idea/modules/multiple-status-view/MyAndroid-multiple-status-view.iml" group="MyAndroid/multiple-status-view" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/MyAndroid-util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/MyAndroid-util.iml" group="MyAndroid/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/viewlibrary/MyAndroid-viewlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/viewlibrary/MyAndroid-viewlibrary.iml" group="MyAndroid/viewlibrary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OpenSource-MyAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/OpenSource-MyAndroid.iml" group="MyAndroid" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="MyAndroid/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/appupdate/appupdate.iml" filepath="$PROJECT_DIR$/.idea/modules/appupdate/appupdate.iml" group="MyAndroid/appupdate" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/baselib/baselib.iml" filepath="$PROJECT_DIR$/.idea/modules/baselib/baselib.iml" group="MyAndroid/baselib" />
