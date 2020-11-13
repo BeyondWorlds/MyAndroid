@@ -15,22 +15,26 @@ public class FileUtil {
      * @param context
      */
     public static void testFile(Context context) {
-        File fileCacheDir = context.getCacheDir();// /data/user/0/com.beyondworlds.baseview/cache,应用内部存储，要root后才能看到
-        Log.d(TAG, "fileCacheDir=" + fileCacheDir.getPath() + " fileCacheDir=" + fileCacheDir.getAbsolutePath());
+        // /data/user/0/com.beyondworlds.baseview/cache,应用内部存储，要root后才能看到
+        File CacheDir = context.getCacheDir();
+        Log.d(TAG, "getCacheDir=" + CacheDir.getPath() + " getCacheDir=" + CacheDir.getAbsolutePath());
+        // /data/user/0/com.beyondworlds.baseview/files
+        File fileDir = context.getFilesDir();
+        Log.d(TAG, "getFilesDir=" + fileDir.getAbsolutePath());
 
-        File fileCache = context.getExternalCacheDir();// /storage/emulated/0/Android/data/com.beyondworlds.baseview/cache
-        Log.d(TAG, "fileCache=" + fileCache.getPath() + " fileCacheAbsolutePath=" + fileCache.getAbsolutePath());
+
+        // /storage/emulated/0/Android/data/com.beyondworlds.baseview/cache
+        File externalCacheDir = context.getExternalCacheDir();
+        Log.d(TAG, "getExternalCacheDir=" + externalCacheDir.getPath() + " fileCacheAbsolutePath=" + externalCacheDir.getAbsolutePath());
         //测试发现只有一个目录，就是上面那个
         File[] files = context.getExternalCacheDirs();
         if (files != null) {
             for (File fileItem : files) {
-                Log.d(TAG, "filesPath=" + fileItem.getAbsolutePath());
+                Log.d(TAG, "getExternalCacheDirs=" + fileItem.getAbsolutePath());
             }
         }
 
-        File fileDir = context.getFilesDir();
-        Log.d(TAG, "fileDir=" + fileDir.getAbsolutePath());
-
+        // /storage/emulated/0/Android/data/com.beyondworlds.baseview/files
         File fileExternalDir = context.getExternalFilesDir(null);
         Log.d(TAG, "fileExternalDir=" + fileExternalDir.getPath());
         File[] fileExternalDirs = context.getExternalFilesDirs(null);
@@ -43,13 +47,15 @@ public class FileUtil {
         // sdcard 路径 ：/storage/emulated/0
         File sdPath = Environment.getExternalStorageDirectory();
         Log.d(TAG, "sdPath=" + sdPath.getAbsolutePath());
+
+        Log.d(TAG, "sdPath=" + sdPath.getAbsolutePath());
         //根目录  路径：/system
         File rootPath = Environment.getRootDirectory();
         Log.d(TAG, "rootPath=" + rootPath.getAbsolutePath());
         //数据目录  路径：/data
         File dataPath = Environment.getDataDirectory();
         Log.d(TAG, "dataPath=" + dataPath.getAbsolutePath());
-        //下载目录 路径：/cache
+        //下载目录 路径：/data/cache
         File downLoadPath = Environment.getDownloadCacheDirectory();
         Log.d(TAG, "downLoadPath=" + downLoadPath.getAbsolutePath());
     }

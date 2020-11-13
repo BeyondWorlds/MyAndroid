@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--背景颜色-->
+    <item>
+        <shape>
+            <solid android:color="#ffffff"></solid>
+            <corners android:radius="2dp" />
+        </shape>
+    </item>
+
+    <!--顶部阴影-->
+    <item
+        android:height="3dp"
+        android:gravity="top">
+        <shape>
+            <corners
+                android:topLeftRadius="4dp"
+                android:topRightRadius="4dp" />
+            <gradient
+                android:angle="-90"
+                android:endColor="#FFFFFF"
+                android:startColor="#599b9b9b  " />
+        </shape>
+    </item>
+    <!--左边阴影-->
+    <item
+        android:width="3dp"
+        android:gravity="left"
+        android:top="2dp">
+        <shape>
+            <gradient
+                android:angle="0"
+                android:endColor="#FFFFFF"
+                android:startColor="#599b9b9b" />
+        </shape>
+    </item>
+    <!--右边阴影-->
+    <item
+        android:width="3dp"
+        android:gravity="right"
+        android:top="2dp">
+        <shape>
+            <gradient
+                android:endColor="#599b9b9b"
+                android:startColor="#FFFFFFFF" />
+        </shape>
+    </item>
+    <!--底部阴影   必须计算控件的高度设置距离top的高度，-->
+    <item
+        android:height="3dp"
+        android:gravity="bottom"
+        android:top="98dp">
+        <shape>
+            <corners
+                android:bottomLeftRadius="4dp"
+                android:bottomRightRadius="4dp" />
+            <gradient
+                android:angle="90"
+                android:endColor="#FFFFFFFF"
+                android:startColor="#599b9b9b" />
+        </shape>
+    </item>
+</layer-list>

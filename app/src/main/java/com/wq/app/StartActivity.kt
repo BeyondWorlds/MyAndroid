@@ -88,6 +88,7 @@ class StartActivity : AppCompatActivity() {
                 7 -> startActivity(Intent(this@StartActivity, PermissonActivity::class.java))
                 8 -> ApkDownLoadManager(this).startDownLoad(mApkUrl)
                 9 -> startActivity(Intent(this@StartActivity, BarActivity::class.java))
+//                10 -> startActivity(Intent(this@StartActivity, CoordinatorMainActivity::class.java))
             }
         }
     }

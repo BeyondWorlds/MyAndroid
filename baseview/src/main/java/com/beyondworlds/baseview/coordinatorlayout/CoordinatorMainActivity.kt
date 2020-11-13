@@ -18,7 +18,7 @@ class CoordinatorMainActivity : AppCompatActivity() {
         btn_exitUntilCollapsed.setOnClickListener {  }
         btn_snap.setOnClickListener {  }
 
-        btn_test.setOnClickListener {     FileUtil.testFile(this@CoordinatorMainActivity);}
+        btn_test.setOnClickListener {   FileUtil.testFile(this@CoordinatorMainActivity);}
 
     }
 }
