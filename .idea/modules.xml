@@ -25,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ktx/ktx.iml" filepath="$PROJECT_DIR$/.idea/modules/ktx/ktx.iml" group="MyAndroid/ktx" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/multiple-status-view/multiple-status-view.iml" filepath="$PROJECT_DIR$/.idea/modules/multiple-status-view/multiple-status-view.iml" group="MyAndroid/multiple-status-view" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="MyAndroid/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/version_adapter/version_adapter.iml" filepath="$PROJECT_DIR$/.idea/modules/version_adapter/version_adapter.iml" group="MyAndroid/version_adapter" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/viewlibrary/viewlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/viewlibrary/viewlibrary.iml" group="MyAndroid/viewlibrary" />
     </modules>
   </component>

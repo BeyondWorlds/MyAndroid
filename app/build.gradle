@@ -4,8 +4,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 android {
-    compileSdkVersion compile_sdk_version
-    buildToolsVersion build_tools_Version
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
     defaultConfig {
         applicationId "com.wq.allandroid"
         minSdkVersion min_sdk_version
@@ -38,6 +38,15 @@ android {
         sourceCompatibility 1.8
         targetCompatibility 1.8
     }
+
+
+}
+
+//添加aar,libs
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 dependencies {
@@ -45,13 +54,13 @@ dependencies {
     implementation project(':appupdate')
     implementation project(':baselib')
     implementation project(':ktx')
+
     implementation 'com.google.android.material:material:1.0.0'
 
-
 }
-repositories {
-    mavenCentral()
-}
+//repositories {
+//    mavenCentral()
+//}
 
 /** 创建当前时间字符创 比如 20161107表示2016年11月7号进行编译 */
 def buildTime() {

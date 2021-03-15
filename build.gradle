@@ -1,9 +1,11 @@
-
 buildscript {
     ext.kotlin_version = '1.3.70'
     repositories {
         google()
         jcenter()
+//        maven {
+//            url "https://nexus.zzpxx.com/repository/maven-releases/"
+//        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.0.1'
@@ -20,33 +22,38 @@ allprojects {
         google()
         jcenter()
         //cookiejar_version
-        maven { url "https://jitpack.io" }
+        maven {
+            url "https://jitpack.io"
+        }
+        maven {
+            url "https://nexus.zzpxx.com/repository/android_lib/"
+        }
     }
 }
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-ext{
-    ext{
+ext {
+    ext {
         //Sdk and tools
-        compile_sdk_version=29
-        build_tools_Version="29.0.3"
-        min_sdk_version=23
-        target_sdk_version=29
-        version_code=1
-        version_name='1.0'
+        compile_sdk_version = 29
+        build_tools_Version = "29.0.3"
+        min_sdk_version = 23
+        target_sdk_version = 29
+        version_code = 1
+        version_name = '1.0'
 
         //android
-        ktx_core_version='1.3.0'
-        appcompat_version='1.1.0'
-        constraint_version='1.1.3'
-        lifecycle_version='2.2.0'
+        ktx_core_version = '1.3.0'
+        appcompat_version = '1.1.0'
+        constraint_version = '1.1.3'
+        lifecycle_version = '2.2.0'
 
         //http
 
-        retrofit_version='2.8.1'
-        okhttp_interceptor_version='4.0.0'
-        cookiejar_version='v1.0.1'
+        retrofit_version = '2.8.1'
+        okhttp_interceptor_version = '4.0.0'
+        cookiejar_version = 'v1.0.1'
         //view
         //expand
 
