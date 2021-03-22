@@ -6,8 +6,9 @@ import android.net.ConnectivityManager
 import android.net.Network
 import android.net.NetworkRequest
 import android.os.Build
+import android.widget.Toast
+import com.beyondworlds.ktx.toast
 import com.example.utillibrary.AppUtil
-import com.jkcq.util.ktx.toast
 import kotlin.properties.Delegates
 
 
@@ -33,25 +34,6 @@ open class BaseApp : Application() {
      * 注册监听网路
      */
     fun registerNetwork() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            val manager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            manager.requestNetwork(NetworkRequest.Builder().build(),
-                    object : ConnectivityManager.NetworkCallback() {
-                        override fun onAvailable(network: Network) {
-                            toast("网络可用")
-                        }
-
-                        override fun onLost(network: Network) {
-                            toast("网络已断开，请检查网络")
-
-                        }
-
-                        override fun onUnavailable() {
-                            toast("网络不可用")
-
-                        }
-                    })
-        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             val manager = getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
             manager.registerDefaultNetworkCallback(object : ConnectivityManager.NetworkCallback() {

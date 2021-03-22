@@ -53,7 +53,7 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':appupdate')
     implementation project(':baselib')
-    implementation project(':ktx')
+    implementation project(':version_adapter')
 
     implementation 'com.google.android.material:material:1.0.0'
 

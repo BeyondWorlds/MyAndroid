@@ -1,7 +1,6 @@
 include ':version_adapter'
 include ':jetpack'
 include ':ktx'
-
 include ':app', ':javatest', ':baselib',':util', ':multiple-status-view', ':viewlibrary', ':appupdate'
 include ':baseview'
 include ':filelibrary'

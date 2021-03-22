@@ -3,7 +3,9 @@
     package="com.example.version_adapter">
 
     <application>
-        <activity android:name=".VersionAdapterActivity"></activity>
+        <activity android:name=".android_q.AndroidQActivity"></activity>
+        <activity android:name=".android9.Android9Activity" />
+        <activity android:name=".VersionAdapterActivity" />
     </application>
 
 </manifest>

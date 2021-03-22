@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="knowledge_list">
+        <item>版本适配</item>
         <item>Dialog</item>
         <item>跳到其他应用</item>
         <item>ViewPager</item>

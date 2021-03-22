@@ -3,14 +3,14 @@ package com.jkcq.base.base
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.beyondworlds.ktx.longToast
+import com.beyondworlds.ktx.toast
 import com.beyondworlds.wanandroid.net.responseHandle.AppException
 import com.beyondworlds.wanandroid.net.responseHandle.ExceptionHandle
 import com.jkcq.base.app.BaseApp
 import com.jkcq.base.app.Preference
 import com.jkcq.base.net.bean.BaseResponse
 import com.jkcq.util.NetUtil
-import com.jkcq.util.ktx.longToast
-import com.jkcq.util.ktx.toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
