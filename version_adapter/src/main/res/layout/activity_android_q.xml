@@ -12,6 +12,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="截图并保存"></Button>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_get_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取相册图片"></Button>
+        <Button
+            android:id="@+id/btn_get_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="获取手机图片"></Button>
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_get_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取拍照图片"></Button>
+
+
+    <Button
+        android:id="@+id/btn_get_photo_or_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="从相册或相机获取图片"></Button>
 
     <ImageView
         android:id="@+id/iv_show"

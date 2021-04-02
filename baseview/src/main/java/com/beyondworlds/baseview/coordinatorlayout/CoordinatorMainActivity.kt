@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.beyondworlds.baseview.R
-import com.beyondworlds.filelibrary.FileUtil
 import kotlinx.android.synthetic.main.activity_coordinator_main.*
 
 class CoordinatorMainActivity : AppCompatActivity() {
@@ -17,8 +16,6 @@ class CoordinatorMainActivity : AppCompatActivity() {
         btn_enterAlwaysCollapsed.setOnClickListener {  }
         btn_exitUntilCollapsed.setOnClickListener {  }
         btn_snap.setOnClickListener {  }
-
-        btn_test.setOnClickListener {   FileUtil.testFile(this@CoordinatorMainActivity);}
 
     }
 }

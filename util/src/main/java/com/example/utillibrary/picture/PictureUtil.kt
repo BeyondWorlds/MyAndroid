@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.media.MediaScannerConnection
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -53,6 +54,11 @@ object PictureUtil {
         // 最后通知图库更新
         // context.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.parse("file://" + path)));
         context.sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(File(fileName))));
+
+        //使用MediaScannerConnection通知
+//        MediaScannerConnection.scanFile(context, arrayOf(fileName), arrayOf("image/jpeg"), { path, uri ->
+//            //扫描完成
+//          })
         return true
     }
 
@@ -77,7 +83,7 @@ object PictureUtil {
             }
             return true
         } else {
-            MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, "title", "desc")
+            MediaStore.Images.Media.insertImage(context.contentResolver, bitmap, "title", null)
             return true
         }
     }

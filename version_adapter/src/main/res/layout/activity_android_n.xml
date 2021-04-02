@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".android_n.AndroidNActivity">
+
+    <Button
+        android:id="@+id/btn_get_all_filepath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="各种文件路径"/>
+
+    <Button
+        android:id="@+id/btn_save_pic2file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存图片到当前应用下"></Button>
+
+    <Button
+        android:id="@+id/btn_save_pic2cachefile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存图片到当前应用缓存目录下"></Button>
+
+
+    <Button
+        android:id="@+id/btn_save_pic2sdcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存图片到外部存储器"></Button>
+</LinearLayout>

@@ -3,9 +3,19 @@
     package="com.example.version_adapter">
 
     <application>
-        <activity android:name=".android_q.AndroidQActivity"></activity>
-        <activity android:name=".android9.Android9Activity" />
+        <activity android:name=".android_n.AndroidNActivity"></activity>
+        <activity android:name=".android_q.AndroidQActivity" />
         <activity android:name=".VersionAdapterActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.android7.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

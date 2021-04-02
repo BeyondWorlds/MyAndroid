@@ -1,8 +1,14 @@
-package com.beyondworlds.filelibrary;
+package com.example.version_adapter.android_n;
 
 import android.content.Context;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.util.Log;
+
+import androidx.core.content.FileProvider;
+
+import com.example.utillibrary.LogUtil;
 
 import java.io.File;
 
@@ -10,18 +16,11 @@ public class FileUtil {
     private static final String TAG = FileUtil.class.getSimpleName();
 
     /**
-     * 获取各种文件
+     * 获取各种文件,android11后，基本只有getExternalCacheDir和getExternalFilesDir有用了
      *
      * @param context
      */
-    public static void testFile(Context context) {
-        // /data/user/0/com.beyondworlds.baseview/cache,应用内部存储，要root后才能看到
-        File CacheDir = context.getCacheDir();
-        Log.d(TAG, "getCacheDir=" + CacheDir.getPath() + " getCacheDir=" + CacheDir.getAbsolutePath());
-        // /data/user/0/com.beyondworlds.baseview/files
-        File fileDir = context.getFilesDir();
-        Log.d(TAG, "getFilesDir=" + fileDir.getAbsolutePath());
-
+    public static void showAllFunctionFilepath(Context context) {
 
         // /storage/emulated/0/Android/data/com.beyondworlds.baseview/cache
         File externalCacheDir = context.getExternalCacheDir();
@@ -58,6 +57,14 @@ public class FileUtil {
         //下载目录 路径：/data/cache
         File downLoadPath = Environment.getDownloadCacheDirectory();
         Log.d(TAG, "downLoadPath=" + downLoadPath.getAbsolutePath());
+
+
+        // /data/user/0/com.beyondworlds.baseview/cache,应用内部存储，要root后才能看到
+        File CacheDir = context.getCacheDir();
+        Log.d(TAG, "getCacheDir=" + CacheDir.getPath() + " getCacheDir=" + CacheDir.getAbsolutePath());
+        // /data/user/0/com.beyondworlds.baseview/files
+        File fileDir = context.getFilesDir();
+        Log.d(TAG, "getFilesDir=" + fileDir.getAbsolutePath());
     }
 
     /**
@@ -116,4 +123,25 @@ public class FileUtil {
     public static void getSDCardDir() {
 
     }
+
+    /**
+     * Android7.0获取文件Uri
+     * @param context
+     * @param file
+     * @return
+     */
+    public static Uri getUriFromFile(Context context, File file) {
+        Uri fileUri = null;
+        //authority对应清单文件的配置
+        if (Build.VERSION.SDK_INT >= 24) {
+            fileUri = FileProvider.getUriForFile(context,
+                    context.getPackageName() + ".android7.fileprovider",
+                    file);
+            LogUtil.e("packageName="+context.getPackageName());
+        } else {
+            fileUri = Uri.fromFile(file);
+        }
+        return fileUri;
+    }
+
 }
