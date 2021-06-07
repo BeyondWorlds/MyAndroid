@@ -111,12 +111,13 @@ class AndroidQActivity : AppCompatActivity() {
         //Android11拍照的存储地址必须是应用私有存储空间，否则存不进去
 //        val saveFilepath = externalCacheDir?.path + "/camera_" + System.currentTimeMillis() + ".jpg"
         val saveFilepath = getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.path + "/camera_" + System.currentTimeMillis() + ".jpg"
-        //相机拍照返回后，拿到的uri为null,所以这里生成uri
+        //相机拍照返回后，拿到的uri为null,所以这里生成uri,必须使用7.0以后的方式获取uri
         mImgUri = FileUtil.getUriFromFile(this, File(saveFilepath))
         //android11以后强制分区存储，外部资源无法访问，所以添加一个输出保存位置，然后取值操作
         intent.putExtra(MediaStore.EXTRA_OUTPUT, mImgUri)
         intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         startActivityForResult(intent, REQUEST_CODE_CAMERA)
+
     }
 
     /**
@@ -137,6 +138,8 @@ class AndroidQActivity : AppCompatActivity() {
                 inputStream = contentResolver.openInputStream(it)
                 val bitmap = BitmapFactory.decodeStream(inputStream)
                 iv_show.setImageBitmap(bitmap)
+                //保存到相册
+                ImageUtils.save2Album(bitmap,Bitmap.CompressFormat.JPEG,100,true)
             }
         } catch (e: FileNotFoundException) {
             e.printStackTrace()

@@ -1,3 +1,4 @@
+include ':process'
 include ':version_adapter'
 include ':jetpack'
 include ':ktx'

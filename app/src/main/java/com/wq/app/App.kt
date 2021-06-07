@@ -1,4 +1,4 @@
-package com.wq
+package com.wq.app
 
 import android.app.Application
 import android.content.Context

@@ -4,7 +4,12 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,6 +22,16 @@ public class ActivityLifecycleController implements Application.ActivityLifecycl
      * 维护Activity 的list
      */
     private static List<Activity> mActivitys = Collections.synchronizedList(new LinkedList<Activity>());
+
+    /**
+     * sdk29以上才支持
+     * @param activity
+     * @param savedInstanceState
+     */
+    @Override
+    public void onActivityPreCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+
+    }
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
@@ -70,37 +85,27 @@ public class ActivityLifecycleController implements Application.ActivityLifecycl
         mActivitys.remove(activity);
     }
 
-    public static void finishAllActivity(String className) {
+    /**
+     * 关掉所有Activity,过滤某些Activity
+     *
+     * @param classnames
+     */
+    public static void finishAllActivity(String... classnames) {
+
+        HashSet<String> set = new HashSet<>(Arrays.asList(classnames));
         if (mActivitys == null) {
             return;
         }
         for (Activity activity : mActivitys) {
-            if (className != null) {
-                if (!className.equals(activity.getClass().getSimpleName())) {
+            for (String classname : classnames) {
+                if (classname != null) {
+                    if (!set.contains(activity.getClass().getSimpleName())) {
+                        activity.finish();
+                    }
+                } else {
                     activity.finish();
                 }
-            } else {
-                activity.finish();
             }
-
         }
-        mActivitys.clear();
-    }
-
-    public static void finishAllActivity(String className, String className2) {
-        if (mActivitys == null) {
-            return;
-        }
-        for (Activity activity : mActivitys) {
-            if (className != null) {
-                if (!className.equals(activity.getClass().getSimpleName()) && !className2.equals(activity.getClass().getSimpleName())) {
-                    activity.finish();
-                }
-            } else {
-                activity.finish();
-            }
-
-        }
-        mActivitys.clear();
     }
 }

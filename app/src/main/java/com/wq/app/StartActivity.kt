@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.widget.ArrayAdapter
 import com.beyondworlds.appupdate.ApkDownLoadManager
+import com.example.utillibrary.LogUtil
 import com.example.utillibrary.activity.PermissonActivity
 import com.example.version_adapter.VersionAdapterActivity
 import com.tbruyelle.rxpermissions2.RxPermissions
@@ -35,7 +36,7 @@ class StartActivity : AppCompatActivity() {
         initPermission()
         initData()
         initListView()
-        Log.e("test", "onCreate")
+        LogUtil.e("test", "onCreate")
     }
 
     override fun onStart() {

@@ -9,7 +9,7 @@
     <cache-path
         name="cache"
         path="" />
-    <!--一般使用这个-->
+    <!--一般使用这个,其他的各个目录基本都是这个目录的字目录，所以原则上写它一个就够了-->
     <external-path
         name="external"
         path="." />
