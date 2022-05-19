@@ -26,6 +26,6 @@ dependencies {
 
     api 'com.blankj:utilcodex:1.29.0'
 }
-repositories {
-    mavenCentral()
-}
+//repositories {
+//    mavenCentral()
+//}

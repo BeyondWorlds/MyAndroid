@@ -18,9 +18,9 @@ targetCompatibility = "8"
 //        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 //    }
 //}
-repositories {
-    mavenCentral()
-}
+//repositories {
+//    mavenCentral()
+//}
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"

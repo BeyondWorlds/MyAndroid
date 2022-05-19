@@ -3,46 +3,104 @@
     package="com.wq.allandroid">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:name="com.wq.app.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_test1"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:sharedUserId="android.uid.system"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.wq.activity.BarActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="com.wq.TestActivity" />
-        <activity android:name="com.wq.activity.basewidget.EdittextActivity" />
-        <activity android:name="com.wq.activity.basewidget.TextViewActivity" /> <!-- exported: 允许其他应用调用；process：指定运行进程 -->
-        <activity android:name="com.wq.app.StartActivity">
+            android:name="com.wq.HomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.wq.activity.BarActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.wq.TestActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.activity.basewidget.EdittextActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.activity.basewidget.TextViewActivity"
+            android:exported="false" /> <!-- exported: 允许其他应用调用；process：指定运行进程 -->
+        <activity
+            android:name="com.wq.app.StartActivity"
+            android:exported="true" />
+
+
         <activity
             android:name="com.wq.app.MainActivity"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" /> <!-- activity -->
-        <activity android:name="com.wq.activity.TestListActivity" />
-        <activity android:name="com.wq.activity.CustomActivity" />
-        <activity android:name="com.wq.manager.nitification.NotificationActivity" />
-        <activity android:name="com.wq.base.BaseActivity" />
-        <activity android:name="com.wq.activity.ResUsageActivity" />
-        <activity android:name="com.wq.view.dialog.DialogActivity" />
-        <activity android:name="com.wq.view.viewpager.vptransformer.ui.VPTransformerActivity" />
-        <activity android:name="com.wq.manager.ui.ManagerFunctionActivity" />
-        <activity android:name="com.wq.animation.StartAnimationActivity" />
-        <activity android:name="com.wq.animation.tween.TranslateActivity" /> <!-- animation -->
-        <activity android:name="com.wq.animation.tween.ScaleActivity" />
-        <activity android:name="com.wq.animation.tween.AlphaActivity" />
-        <activity android:name="com.wq.animation.tween.RotateActivity" />
-        <activity android:name="com.wq.animation.tween.AnimationSetActivity" />
-        <activity android:name="com.wq.animation.tween.AnimationUtilActivity" />
-        <activity android:name="com.wq.animation.property.BasePropertyActivity" />
+        <activity
+            android:name="com.wq.activity.TestListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.activity.CustomActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.wq.manager.nitification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.base.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.activity.ResUsageActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.view.dialog.DialogActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.view.viewpager.vptransformer.ui.VPTransformerActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.manager.ui.ManagerFunctionActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.StartAnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.tween.TranslateActivity"
+            android:exported="false" /> <!-- animation -->
+        <activity
+            android:name="com.wq.animation.tween.ScaleActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.tween.AlphaActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.tween.RotateActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.tween.AnimationSetActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.tween.AnimationUtilActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wq.animation.property.BasePropertyActivity"
+            android:exported="false" />
 
         <meta-data
             android:name="test"
@@ -54,14 +112,5 @@
             android:exported="true"
             android:process=":remote" />
     </application>
-
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

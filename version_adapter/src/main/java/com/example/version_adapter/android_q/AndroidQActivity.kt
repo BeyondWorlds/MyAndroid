@@ -2,16 +2,22 @@ package com.example.version_adapter.android_q
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Camera
+import android.hardware.camera2.CameraManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
+import android.os.Handler
 import android.provider.MediaStore
 import android.util.Log
+import android.view.KeyEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.beyondworlds.ktx.TAG
 import com.blankj.utilcode.util.FileUtils
 import com.blankj.utilcode.util.ImageUtils
 import com.example.utillibrary.LogUtil
@@ -44,7 +50,6 @@ class AndroidQActivity : AppCompatActivity() {
 //            ImageUtils.save2Album(bitmap,Bitmap.CompressFormat.JPEG)
 
         }
-
         btn_get_camera.setOnClickListener {
             getPictureByCamera()
         }
@@ -62,24 +67,37 @@ class AndroidQActivity : AppCompatActivity() {
 
 
     fun checkPermission() {
-        PermissionUtil.checkPermission(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA), permissonCallback = object : PermissionUtil.OnPermissonCallback {
-            override fun isGrant(grant: Boolean) {
-                if (grant) {
-                    Toast.makeText(this@AndroidQActivity, "permission success", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this@AndroidQActivity, "failed", Toast.LENGTH_SHORT).show()
+        PermissionUtil.checkPermission(
+            this,
+            arrayOf(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA
+            ),
+            permissonCallback = object : PermissionUtil.OnPermissonCallback {
+                override fun isGrant(grant: Boolean) {
+                    if (grant) {
+                        Toast.makeText(
+                            this@AndroidQActivity,
+                            "permission success",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(this@AndroidQActivity, "failed", Toast.LENGTH_SHORT).show()
 
+                    }
                 }
-            }
-        })
+            })
     }
 
     /**
      * 从相册选取图片
      */
     fun getPictureByPhoto() {
-        val PhotoIntent = Intent(Intent.ACTION_PICK,
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        val PhotoIntent = Intent(
+            Intent.ACTION_PICK,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+        )
         startActivityForResult(PhotoIntent, REQUEST_CODE_PHOTO)
     }
 
@@ -110,7 +128,8 @@ class AndroidQActivity : AppCompatActivity() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         //Android11拍照的存储地址必须是应用私有存储空间，否则存不进去
 //        val saveFilepath = externalCacheDir?.path + "/camera_" + System.currentTimeMillis() + ".jpg"
-        val saveFilepath = getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.path + "/camera_" + System.currentTimeMillis() + ".jpg"
+        val saveFilepath =
+            getExternalFilesDir(Environment.DIRECTORY_PICTURES)?.path + "/camera_" + System.currentTimeMillis() + ".jpg"
         //相机拍照返回后，拿到的uri为null,所以这里生成uri,必须使用7.0以后的方式获取uri
         mImgUri = FileUtil.getUriFromFile(this, File(saveFilepath))
         //android11以后强制分区存储，外部资源无法访问，所以添加一个输出保存位置，然后取值操作
@@ -139,7 +158,7 @@ class AndroidQActivity : AppCompatActivity() {
                 val bitmap = BitmapFactory.decodeStream(inputStream)
                 iv_show.setImageBitmap(bitmap)
                 //保存到相册
-                ImageUtils.save2Album(bitmap,Bitmap.CompressFormat.JPEG,100,true)
+                ImageUtils.save2Album(bitmap, Bitmap.CompressFormat.JPEG, 100, true)
             }
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
@@ -166,5 +185,14 @@ class AndroidQActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+      when(keyCode){
+          KeyEvent.KEYCODE_CAMERA->{
+              Log.e(TAG," KEYCODE_CAMERA")
+          }
+      }
+        return super.onKeyDown(keyCode, event)
     }
 }

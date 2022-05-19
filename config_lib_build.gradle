@@ -1,0 +1,69 @@
+/**
+ * 关于整个项目lib依赖库的通用gradle配置
+ */
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion compile_sdk_version
+
+    defaultConfig {
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+//        multiDexEnabled true
+//        ndk { //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+////           abiFilters "armeabi-v7a"
+//        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    //不进行代码静态检测
+    lintOptions {
+        abortOnError false
+    }
+
+    //支持java8
+    compileOptions {
+//        coreLibraryDesugaringEnabled = true
+
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+
+    }
+    //支持kotlin
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+
+    //开启databinding
+    buildFeatures{
+        dataBinding = true
+    }
+
+
+
+    //生成libs目录
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+//    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
+
+}

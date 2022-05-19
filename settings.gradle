@@ -1,3 +1,17 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+}
+rootProject.name = "MyAndroid"
+
+
 include ':process'
 include ':version_adapter'
 include ':jetpack'
@@ -5,3 +19,4 @@ include ':ktx'
 include ':app', ':javatest', ':baselib',':util', ':multiple-status-view', ':viewlibrary', ':appupdate'
 include ':baseview'
 include ':filelibrary'
+include ':system'

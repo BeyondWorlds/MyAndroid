@@ -3,7 +3,9 @@ package com.wq.app
 import android.Manifest
 import android.content.ComponentName
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -20,15 +22,19 @@ import com.wq.manager.ui.ManagerFunctionActivity
 import com.wq.view.dialog.DialogActivity
 import com.wq.view.viewpager.vptransformer.ui.VPTransformerActivity
 import kotlinx.android.synthetic.main.activity_start.*
+import java.util.*
 
 
 class StartActivity : AppCompatActivity() {
 
-    var mStartPosition=1
+    var mStartPosition = 1
 
     var mKnowledgeList: Array<String>? = null
-//    var mApkUrl ="https://isportcloud.oss-cn-shenzhen.aliyuncs.com/manager/shikongzhiyiH5_10664.apk"
-    var mApkUrl = "https://isportcloud.oss-cn-shenzhen.aliyuncs.com/manager/JKCQ_V[1.1.6]_2020-03-05-1510_release.apk"
+
+    //    var mApkUrl ="https://isportcloud.oss-cn-shenzhen.aliyuncs.com/manager/shikongzhiyiH5_10664.apk"
+    var mApkUrl =
+        "https://isportcloud.oss-cn-shenzhen.aliyuncs.com/manager/JKCQ_V[1.1.6]_2020-03-05-1510_release.apk"
+
     override
     fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +58,38 @@ class StartActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.e("test", "onresume")
+        Handler().postDelayed({
+            val timeZoneIDs = TimeZone.getAvailableIDs()
+            Log.e("test", "size=" + timeZoneIDs.size)
+            for (index in timeZoneIDs.indices) {
+                Log.e(
+                    "test",
+                    "id=" + TimeZone.getTimeZone(timeZoneIDs[index]) + "  name=" + TimeZone.getTimeZone(
+                        timeZoneIDs[index]
+                    ).displayName + " \n cityName=" + TimeZone.getTimeZone(timeZoneIDs[index])
+                        .getDisplayName(Locale.CHINA) + "shortName=" + TimeZone.getTimeZone(
+                        timeZoneIDs[index]
+                    ).getDisplayName(false, TimeZone.SHORT)
+                )
+
+            }
+        }, 2000)
+        Log.e(
+            "test",
+            "shagnhai=" + TimeZone.getTimeZone("Asia/Shanghai")
+        )
+        Log.e(
+            "test",
+            "shagnhaiName=" + TimeZone.getTimeZone("Asia/Shanghai")
+                .getDisplayName(Locale.getDefault())
+        )
+        Log.e(
+            "test",
+            "shagnhaiChina=" + TimeZone.getTimeZone("Asia/Shanghai").id + "  zomeID=" + TimeZone.getTimeZone(
+                "Asia/Shanghai"
+            ).getDisplayName(Locale.CHINA)
+        )
+
     }
 
     override fun onStop() {
@@ -69,31 +107,78 @@ class StartActivity : AppCompatActivity() {
     }
 
     fun initListView() {
-        lv_start_list.adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKnowledgeList!!)
+        lv_start_list.adapter =
+            ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKnowledgeList!!)
         lv_start_list.setOnItemClickListener { _, _, position, _ ->
             when (position) {
-                mStartPosition-1 ->startActivity(Intent(this@StartActivity, VersionAdapterActivity::class.java))
-                mStartPosition -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
-                mStartPosition+1 -> {
+                mStartPosition - 1 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        VersionAdapterActivity::class.java
+                    )
+                )
+                mStartPosition -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        DialogActivity::class.java
+                    )
+                )
+                mStartPosition + 1 -> {
                     //跳转到其他应用的activity，如果这个activity不是入口activity，则需要添加export：true即允许其他应用调用
                     val intent = Intent()
                     intent.component = ComponentName(
-                            "com.tlf.medical.ytk",
-                            "com.tlf.medical.ui.activity.MainActivity")
+                        "com.tlf.medical.ytk",
+                        "com.tlf.medical.ui.activity.MainActivity"
+                    )
                     //除了setComponent还可以setClassName
 //                    intent.setClassName("包名,
 //                            "类名全路径")
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                     this.startActivity(intent)
                 }
-                mStartPosition+ 2 -> startActivity(Intent(this@StartActivity, VPTransformerActivity::class.java))
-                mStartPosition+3 -> startActivity(Intent(this@StartActivity, StartAnimationActivity::class.java))
-                mStartPosition+4 -> startActivity(Intent(this@StartActivity, DialogActivity::class.java))
-                mStartPosition+ 5 -> startActivity(Intent(this@StartActivity, ManagerFunctionActivity::class.java))
-                mStartPosition+6 -> startActivity(Intent(this@StartActivity, ResUsageActivity::class.java))
-                mStartPosition+ 7 -> startActivity(Intent(this@StartActivity, PermissonActivity::class.java))
-                mStartPosition+ 8 -> ApkDownLoadManager(this).startDownLoad(mApkUrl)
-                mStartPosition+ 9 -> startActivity(Intent(this@StartActivity, BarActivity::class.java))
+                mStartPosition + 2 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        VPTransformerActivity::class.java
+                    )
+                )
+                mStartPosition + 3 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        StartAnimationActivity::class.java
+                    )
+                )
+                mStartPosition + 4 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        DialogActivity::class.java
+                    )
+                )
+                mStartPosition + 5 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        ManagerFunctionActivity::class.java
+                    )
+                )
+                mStartPosition + 6 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        ResUsageActivity::class.java
+                    )
+                )
+                mStartPosition + 7 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        PermissonActivity::class.java
+                    )
+                )
+                mStartPosition + 8 -> ApkDownLoadManager(this).startDownLoad(mApkUrl)
+                mStartPosition + 9 -> startActivity(
+                    Intent(
+                        this@StartActivity,
+                        BarActivity::class.java
+                    )
+                )
 //                10 -> startActivity(Intent(this@StartActivity, CoordinatorMainActivity::class.java))
             }
         }
@@ -102,14 +187,18 @@ class StartActivity : AppCompatActivity() {
     fun initPermission() {
 
         RxPermissions(this)
-                .request(Manifest.permission.CAMERA, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE
-                        , Manifest.permission.REQUEST_INSTALL_PACKAGES)
-                .subscribe { aBoolean ->
-                    if (aBoolean!!) {
+            .request(
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.REQUEST_INSTALL_PACKAGES
+            )
+            .subscribe { aBoolean ->
+                if (aBoolean!!) {
 
-                    } else {
+                } else {
 
-                    }
                 }
+            }
     }
 }

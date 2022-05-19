@@ -1,52 +1,46 @@
 buildscript {
-    ext.kotlin_version = '1.3.70'
+   ext.kotlin_version = '1.3.70'
     repositories {
         google()
         jcenter()
-//        maven {
-//            url "https://nexus.zzpxx.com/repository/maven-releases/"
-//        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+//        classpath "com.android.tools.build:gradle:7.0.3"
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+        classpath 'com.android.tools.build:gradle:7.0.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
     }
 }
 
-repositories {
-    mavenCentral()
-}
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        //cookiejar_version
-        maven {
-            url "https://jitpack.io"
-        }
-        maven {
-            url "https://nexus.zzpxx.com/repository/android_lib/"
-        }
-    }
-}
+//repositories {
+//    mavenCentral()
+//}
+//
+//allprojects {
+//    repositories {
+//        google()
+//        jcenter()
+//        //cookiejar_version
+//
+//    }
+//}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
     ext {
         //Sdk and tools
-        compile_sdk_version = 30
-        build_tools_Version = "30.0.2"
+        compile_sdk_version = 31
         min_sdk_version = 23
-        target_sdk_version = 30
+        target_sdk_version = 31
         version_code = 1
         version_name = '1.0'
 
         //android
-        ktx_core_version = '1.3.0'
-        appcompat_version = '1.1.0'
-        constraint_version = '1.1.3'
-        lifecycle_version = '2.2.0'
+        ktx_core_version = '1.7.0'
+        appcompat_version = '1.4.1'
+        constraint_version = '2.1.3'
+        lifecycle_version = '2.4.1'
+        material_version='1.5.0'
 
         //http
 
