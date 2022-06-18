@@ -1,0 +1,10 @@
+
+apply from: "${rootProject.getProjectDir()}/config_common_build.gradle"
+
+
+android {
+}
+
+dependencies {
+    implementation project(':baselib')
+}
